@@ -1,8 +1,6 @@
 // Snake created without any libraries or canvas
 
 window.onload=menu;
-score=-1;
-let blockArrows;
 
 function menu()
 {
@@ -17,13 +15,13 @@ function addScore()
         sessionStorage.setItem("bestScore", 0);
     }
 
-    score++;
+    Snake.score++;
 
-    if(score>sessionStorage.getItem("bestScore"))
+    if(Snake.score>sessionStorage.getItem("bestScore"))
     {
-        sessionStorage.setItem("bestScore", score);
+        sessionStorage.setItem("bestScore", Snake.score);
     }
-    document.getElementById("footer").innerHTML ='<div id="footerScore">SCORE:' + score + '</div><div id="footerBest"> BEST:' + sessionStorage.getItem("bestScore") + '</div><div id="footerCopyright"></div>';
+    document.getElementById("footer").innerHTML ='<div id="footerScore">SCORE:' + Snake.score + '</div><div id="footerBest"> BEST:' + sessionStorage.getItem("bestScore") + '</div><div id="footerCopyright"></div>';
 }
 
 function coordinatesToBlockId(row, column)
@@ -71,6 +69,8 @@ function Apple()
 
 let Snake=
     {
+
+    score: -1,
 
     direction: 'ArrowUp',
 
@@ -257,7 +257,7 @@ let Snake=
 
         Snake.display();
 
-        blockArrows=false;
+        let blockArrows=false;
         window.addEventListener('keydown', function (event) {
             if(blockArrows===false)                                        //avoids incorrect moves
             {
