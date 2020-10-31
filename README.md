@@ -4,7 +4,4 @@
 https://zaben-dev.github.io/SnakeJS
 
 #### introduction
-Classic Snake game. I created it locally then pushed to github. Written in javascript. 
-
-
-
+My first github project, classic Snake game written in javascript. I created it locally then pushed to github. Check my newest projects.
